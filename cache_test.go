@@ -403,7 +403,7 @@ func BenchmarkParallelMixed(b *testing.B) {
 	c := New[int](time.Minute)
 	defer c.Close()
 
-	for i := 0; i < 1000; i++ {
+	for i := range 1000 {
 		c.Set("key-"+strconv.Itoa(i), i, time.Minute)
 	}
 
